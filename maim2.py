@@ -72,7 +72,7 @@ def role1(message):
         conn.close()
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("Перейти в меню", callback_data="open_menu_teacher"))
-        bot.send_message(message.chat.id, "Регистрация прошла успешно!", reply_markup=markup)
+        bot.send_message(message.chat.id, "Регистрация прошла успешно!✅", reply_markup=markup)
 
     elif role == "Администрация":
         conn=sqlite3.connect('EduBot.sqlite3')
@@ -237,7 +237,7 @@ def missions(message,subject):
     waitingzada = bot.send_message(message.chat.id, "🤖 ИИ составляет задания. Пожалуйста, подождите...")
 
     try:
-        prompt = f"Напиши краткий и полезный конспект для ученика. Предмет: {subject}, Тема: {zadaniya}. Используй жирный шрифт для терминов и списки."
+        prompt = f"Напиши краткий и полезный конспект для ученика. Предмет: {subject}, Тема: {zadaniya}. Используй жирный шрифт для терминов"
 
         response = client.models.generate_content(
             model="gemini-2.0-flash",
@@ -287,5 +287,6 @@ def generate_ai_conspect(message, subject):
 # Запуск
 if __name__ == "__main__":
     print("Бот запущен...")
+
 
     bot.polling(none_stop=True)
