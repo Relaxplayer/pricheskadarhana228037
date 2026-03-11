@@ -3,9 +3,9 @@ from telebot import types
 import sqlite3
 from google import genai
 
-client = genai.Client(api_key="AIzaSyAymxnApTCTEPipqaX46TaO8sIagGn4rMM",http_options={'api_version': 'v1beta'})
+client = genai.Client(api_key="",http_options={'api_version': 'v1beta'})
 
-bot = telebot.TeleBot("8793393597:AAGuv3AQfsw9IVbqmZizh8qmgnjStxEP-sc")
+bot = telebot.TeleBot("")
 
 name = None
 
@@ -290,3 +290,4 @@ if __name__ == "__main__":
 
 
     bot.polling(none_stop=True)
+
